@@ -1,0 +1,41 @@
+
+services:
+  pg17:
+    image: postgres:17.6
+    container_name: textbook-pg17
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app_pass
+      POSTGRES_DB: textbook
+      TZ: Asia/Tokyo
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=C"
+    ports:
+      - "5417:5432"
+    volumes:
+      - pg17_data:/var/lib/postgresql/data
+
+  pg18:
+    image: postgres:18.0
+    container_name: textbook-pg18
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app_pass
+      POSTGRES_DB: textbook
+      TZ: Asia/Tokyo
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=C"
+    ports:
+      - "5418:5432"
+    volumes:
+      - pg18_data:/var/lib/postgresql/data
+
+volumes:
+  pg17_data:
+  pg18_data:
+
+  pgadmin:
+    image: dpage/pgadmin4:8
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin_pass
+    ports:
+      - "5050:80"

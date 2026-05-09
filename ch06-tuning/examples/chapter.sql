@@ -14,7 +14,9 @@ SELECT
  ORDER BY total_exec_time DESC LIMIT 10;
 
 -- ===== Block 3 =====
-EXPLAIN (ANALYZE, BUFFERS) SELECT ...;
+-- 書籍 第6章 Part A の各ケースで対象クエリを差し込んで使用するテンプレート。
+-- 例: EXPLAIN (ANALYZE, BUFFERS) SELECT * FROM users WHERE city = 'Tokyo';
+-- EXPLAIN (ANALYZE, BUFFERS) <対象クエリ>;
 
 -- ===== Block 4 =====
 EXPLAIN ANALYZE SELECT count(*) FROM logs;

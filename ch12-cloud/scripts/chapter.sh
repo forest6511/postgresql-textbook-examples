@@ -1,3 +1,8 @@
+#!/usr/bin/env bash
+# 書籍に掲載されたコマンドの参照用ファイルです。一括実行用ではありません。
+# 必要なブロックを必要な環境(本番 / ステージング / ローカル)で個別に実行してください。
+exit 0
+
 # ===== Block 1 =====
 # Pull Request ごとにブランチを作成
 neonctl branches create --name pr-1234 --parent main

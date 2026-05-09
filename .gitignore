@@ -1,0 +1,30 @@
+# PostgreSQL data
+**/pgdata/
+**/postgres-data/
+**/*.pid
+
+# Backups / dumps
+**/backup/
+**/*.dump
+**/*.sql.gz
+**/*.tar
+**/wal-archive/
+
+# Local environment
+.env
+.env.local
+**/.env
+
+# OS / Editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+
+# Logs
+**/*.log
+**/logs/
+
+# Docker
+**/docker-volumes/

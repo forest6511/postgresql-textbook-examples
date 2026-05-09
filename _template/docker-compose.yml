@@ -1,0 +1,17 @@
+# 各章コピー用テンプレート。PG バージョンは章により 17 / 18 に変更
+version: '3.9'
+services:
+  pg:
+    image: postgres:17-alpine
+    container_name: pg-textbook
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: textbook
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/00-init.sql:ro
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
